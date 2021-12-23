@@ -5,10 +5,11 @@ const fs = require('fs')
 const path = require('path')
 
 
-const md = new MarkdownIt({
+const md = MarkdownIt({
     html: true,
     linkify: true,
     typographer: true,
+    xhtmlOut: true ,
     highlight(str, lang) {
         if (lang && hljs.getLanguage(lang)) {
             try {
@@ -52,14 +53,16 @@ module.exports = function (content, map, meta) {
             results.push(current)
             continue
         }
+        const modulePath = s[1].replace(/["']/g, '')
         const node = {
             sourceCode: current ,
             target: path.resolve(context, s[1].replace(/["']/g, '')),
-            name: buildComponentName()
+            name: buildComponentName(),
+            modulePath
         }
         node.templateCode = fs.readFileSync(node.target, 'utf-8')
         components.push(node)
-        results.push("< " + node.name + " />")
+        results.push("<" + node.name + " />\r\n")
         results.push("```html\r\n" + node.templateCode + "\r\n```")
     }
 
@@ -72,9 +75,10 @@ module.exports = function (content, map, meta) {
         ${htmlCode}
         </template>
         <script>
+            ${ components.map(i => `import ${ i.name } from './${i.modulePath }'`).join('\r\n')}
             export default  {
                 components : {
-                    ${components.map(c => c.name + ': 111').join(',')}
+                    ${components.map(c => c.name ).join(',')}
                 }
             }
         </script>

@@ -1,16 +1,17 @@
-const { VueLoaderPlugin } = require('vue-loader')
+const {VueLoaderPlugin} = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { resolve }= require('./utils')
+const {resolve} = require('./utils')
 
 module.exports = {
     entry: resolve("src/main.js"),
+    mode: 'development',
     output: {
-        filename: "bundle.js" ,
+        filename: "bundle.js",
         path: resolve('dist')
     },
     resolve: {
         alias: {
-            '@' : resolve('src')
+            '@': resolve('src')
         }
     },
     module: {
@@ -33,19 +34,15 @@ module.exports = {
                 ]
             },
             {
-                test : /\.css$/ ,
-                use :[
-                    'style-loader' ,
+                test: /\.css$/,
+                use: [
+                    'style-loader',
                     'css-loader'
                 ]
             }
         ]
     },
-    devServer: {
-        compress: true,
-        port: 8088,
-        historyApiFallback :true
-    },
+
     plugins: [
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({

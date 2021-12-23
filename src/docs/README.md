@@ -1,4 +1,4 @@
-## Home 
+# Home 
 
 
 
@@ -23,7 +23,28 @@ function add (){
 
 
 :::primary
-1111
+
+Primary
+
 :::
+
+
+:::warning
+
+Warning
+
+:::
+
+:::danger
+
+Danger
+
+:::
+:::success
+
+Success
+
+:::
+
 
 

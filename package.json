@@ -22,6 +22,7 @@
     "webpack-merge": "^5.8.0"
   },
   "scripts": {
-    "serve": "webpack serve --config build/webpack.config.dev.js"
+    "serve": "webpack serve --config build/webpack.config.dev.js" ,
+    "build" : "webpack --config build/webpack.config.js"
   }
 }

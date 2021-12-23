@@ -1,5 +1,5 @@
 import '@/assets/styles/highlight.css'
-import '@/assets/styles/markdown-tip.css'
+import '@/assets/styles/base.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router'

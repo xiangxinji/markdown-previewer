@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+    padding:0 40px;
+}
+
+table {
+    width:100%;
+    margin:40px 0;
+    background-color: white;
+    border-radius: 4px;
+}
+table thead th{
+    padding:20px 0;
+    border-bottom:solid 1px #ddd;
+}
+
+.markdown-tip {
+    background-color:white;
+    padding:10px 15px;
+    font-size:18px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+    margin-bottom:20px;
+}
+
+.markdown-tip.primary{
+    background-color: #409EFF;
+    color:white;
+}
+.markdown-tip.danger{
+    background-color: #F56C6C;
+    color:white;
+}
+.markdown-tip.warning{
+    background-color: #E6A23C;
+    color:white;
+}
+.markdown-tip.success{
+    background-color: #67C23A;
+    color:white;
+}
+
+
+
