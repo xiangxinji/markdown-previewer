@@ -34,10 +34,12 @@ module.exports = {
                 ]
             },
             {
-                test: /\.css$/,
+                test: /\.s?css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
                 ]
             }
         ]

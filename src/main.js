@@ -1,5 +1,5 @@
-import '@/assets/styles/highlight.css'
-import '@/assets/styles/base.css'
+import '@/assets/styles/highlight.scss'
+import '@/assets/styles/base.scss'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router'
