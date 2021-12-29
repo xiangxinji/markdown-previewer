@@ -89,14 +89,23 @@ module.exports = function (content, map, meta) {
         ${htmlCode}
         </template>
         <script>
+            import { onMounted , onUnmounted } from 'vue'
+            import { useAsideContext } from '@/store/asideContext'
             const links = ${JSON.stringify(links)}
             ${components.map(i => `import ${i.name} from './${i.modulePath}'`).join('\r\n')}
             export default  {
                 components : {
                     ${components.map(c => c.name).join(',')}
                 },
-                mounted (){
-                         console.log(links)
+                setup (){
+                    const asideContext = useAsideContext();
+                    onMounted(() => {
+                        asideContext.setCurrentAsideTree(links)
+                    })
+                    
+                    onUnmounted(() =>{
+                        asideContext.setCurrentAsideTree(null)
+                    })
                 }
             }
         </script>
