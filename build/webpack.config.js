@@ -22,7 +22,7 @@ module.exports = {
                     {
                         loader: 'vue-loader'
                     },
-                    resolve('loaders/markdown.js')
+                    resolve('loaders/markdown/index.js')
                 ]
             },
             {

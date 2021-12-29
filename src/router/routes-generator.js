@@ -5,7 +5,7 @@ const impComp = (path) => require('@/docs/'+ path)
 
 const getName = ( path ) => path.substring(path.lastIndexOf('/') ,  path.lastIndexOf('.md'))
 
-const isHome = path => path === 'README.md' || path === 'index.md'
+const isHome = path => path === 'README.md' || path === 'markdown.md'
 
 const getPath = ( path ) => {
     const isSubHome = isHome(path.substring(path.lastIndexOf('/') + 1))
